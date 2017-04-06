@@ -17,6 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import TemplateView
+from django.conf.urls import url
+from core import views as core_views
 
 """
 Could use:
@@ -29,6 +31,14 @@ but for greater control the following urls are used.
 """
 
 urlpatterns = [
+
+    # registration with email confirmation
+    url(r'^signup/$', core_views.signup, name='signup'),
+    url(r'^account_activation_sent/$', core_views.account_activation_sent, 
+        name='account_activation_sent'),
+    url(r'activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        core_views.activate, name='activate'),
+
     # auth
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
     url(r'^login/$', auth_views.login, name='login'),

@@ -2,6 +2,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+<h2>Welcome, {{ user.get_full_name }} <small>{{ user.username }}</small>!</h2>
 <p>You are now logged in!</p>
 <p>Click <a href={% url 'logout' %}>here</a> to log out.</p>
 {% else %}
