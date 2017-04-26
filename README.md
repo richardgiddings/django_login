@@ -1,6 +1,6 @@
 # README
 
-Putting together the login, registration and password reset tutorials from https://simpleisbetterthancomplex.com into one repository.
+My attempt at putting together the login, registration and password reset tutorials from https://simpleisbetterthancomplex.com into one repository.
 
 Login
 - https://simpleisbetterthancomplex.com/tutorial/2016/06/27/how-to-use-djangos-built-in-login-system.html
